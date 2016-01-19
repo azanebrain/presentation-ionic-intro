@@ -19,17 +19,23 @@ Now that you have the core utilities, you can download this project from GitHub 
 1) Clone the repository
 `git clone git@github.com:azanebrain/presentation-ionic-intro.git`
 
-2) [Download](https://github.com/azanebrain/presentation-ionic-intro/releases) and unzip the files
+2) Download and unzip the package from  [here](https://github.com/azanebrain/presentation-ionic-intro/archive/master.zip)
 
 ## Run
 
+In the terminal, from the directory with this project, run:
+
 `npm start`
 
-This runs `ionic serve` which will open up the app in your main browser with livereload. As you make changes to this code, they will instantly update 
+This runs `ionic serve` which will open up the app at [hocalhost:8100](http://localhost:8100) in your main browser with livereload. As you make changes to this code, they will instantly update 
+
+If this command complains and throws errors, make sure you've installed all of the dependencies with
+
+`npm install`
 
 You can also run iOS and Android side by side with: `ionic serve --lab`
 
-Background (what's already been done)
+# Background (what's already been done)
 
 The code in this repo is not an out-of-the-box Ionic app. I made the following changes:
 
@@ -42,7 +48,27 @@ ionic add platform android
 ionic add platform ios
 ```
 - Change the default "Playlist Demo" into an "Event Demo" focused on Front End Authority. This adds a new Home template, and lists the event ID on the event's view.
+<<<<<<< HEAD
 - Added examples to pull data from a JSON file, a WordPress site, and a saved Meetup API call to pull all of Front End Authority's past events
+=======
+- Added examples to pull data from a JSON file or a WordPress site
+
+- asana has the rest of the list
+
+
+Your Ionic project is ready to go! Some quick tips:
+
+ * Add a platform (ios or Android): ionic platform add ios [android]
+   Note: iOS development requires OS X currently
+   See the Android Platform Guide for full Android installation instructions:
+   https://cordova.apache.org/docs/en/edge/guide_platforms_android_index.md.html
+
+ * Build your app: ionic build <PLATFORM>
+
+ * Simulate your app: ionic emulate <PLATFORM>
+
+ * Run your app on a device: ionic run <PLATFORM>
+>>>>>>> b02fe05... Add npm start command :shipit:
 
 Good luck, and feel free to submit a [Pull Request](https://github.com/azanebrain/presentation-ionic-intro/pulls) if you notice anything that should be changed.
 

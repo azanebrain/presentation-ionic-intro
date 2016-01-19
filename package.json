@@ -25,4 +25,7 @@
   "cordovaPlatforms": [
     "ios"
   ],
+  "scripts": {
+    "start": "ionic serve"
+  }
 }
