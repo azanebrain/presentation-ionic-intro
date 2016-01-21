@@ -41,16 +41,17 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('EventsCtrl', function($scope) {
+  $scope.events = [
+    { title: 'Hands on with Ionic', id: 1 },
+    { title: 'Developing for Design', id: 2 },
+    { title: 'An intro to POST CSS', id: 3 },
+    { title: 'Atomic Design basics and open mic', id: 4 },
+    { title: 'Open Mic Night', id: 5 },
+    { title: 'Share your project / Lightning talks', id: 6 }
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('EventCtrl', function($scope, $stateParams) {
+  $scope.state = $stateParams;
 });
