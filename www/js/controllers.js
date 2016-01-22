@@ -42,25 +42,39 @@ angular.module('starter.controllers', [])
 })
 
 .controller('EventsCtrl', function($scope, resources) {
-  $scope.events = [
-    { title: 'Hands on with Ionic', id: 1 },
-    { title: 'Developing for Design', id: 2 },
-    { title: 'An intro to POST CSS', id: 3 },
-    { title: 'Atomic Design basics and open mic', id: 4 },
-    { title: 'Open Mic Night', id: 5 },
-    { title: 'Share your project / Lightning talks', id: 6 }
-  ];
   // Retrieve the event data
-  resources.data.get({},
+  resources.events.get({},
   function(data) {
     // Success callback
     console.log('Success: ',data);
-    $scope.data = data;
+    $scope.events = data.results;
   },
   function(error){
     // Error callback
     console.warn('An error occured:',error);
   });
+  
+  // Inline data (no service needed)
+  // $scope.events = [
+  //   { title: 'Hands on with Ionic', id: 1 },
+  //   { title: 'Developing for Design', id: 2 },
+  //   { title: 'An intro to POST CSS', id: 3 },
+  //   { title: 'Atomic Design basics and open mic', id: 4 },
+  //   { title: 'Open Mic Night', id: 5 },
+  //   { title: 'Share your project / Lightning talks', id: 6 }
+  // ];
+  
+  // Retrieve the event data from a JSON file
+  // resources.data.get({},
+  // function(data) {
+  //   // Success callback
+  //   console.log('Success: ',data);
+  //   $scope.data = data;
+  // },
+  // function(error){
+  //   // Error callback
+  //   console.warn('An error occured:',error);
+  // });
 
   // Retrieve data from a custom query on a WordPress site
   // resources.posts.query({
