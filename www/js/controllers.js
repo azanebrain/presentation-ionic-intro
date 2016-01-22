@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('EventsCtrl', function($scope) {
+.controller('EventsCtrl', function($scope, resources) {
   $scope.events = [
     { title: 'Hands on with Ionic', id: 1 },
     { title: 'Developing for Design', id: 2 },
@@ -50,6 +50,17 @@ angular.module('starter.controllers', [])
     { title: 'Open Mic Night', id: 5 },
     { title: 'Share your project / Lightning talks', id: 6 }
   ];
+  // Retrieve the event data
+  resources.data.get({},
+  function(data) {
+    // Success callback
+    console.log('Success: ',data);
+    $scope.data = data;
+  },
+  function(error){
+    // Error callback
+    console.warn('An error occured:',error);
+  });
 })
 
 .controller('EventCtrl', function($scope, $stateParams) {
