@@ -9,9 +9,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
 // This service will collect JSON data
 // It returns a JSON object which the app can interact with (by have the business logic deal with it directly, or setting it to a variable on the scope)
 .factory('resources', function($resource) {
+  var url = 'https://api.meetup.com/';
   return {
-    'data': $resource('data/data.json'),
+    'events': $resource(url + '/2/events?offset=0&format=json&limited_events=False&group_urlname=frontendauthority&photo-host=public&page=20&fields=&order=time&status=past&desc=true&sig_id=63301032&sig=f1fc8b36be5e7e8146f38d4dfc0b4215eddfb60c'),
   };
+  // Example with a static JSON file
+  // return {
+  //   'data': $resource('data/data.json'),
+  // };
   // Example of creating multiple endpoints to retrive different types of data from a WordPress site
   // Example usage: resources.posts.query(...)
   // var url = 'http://representmenow.co/wp-json';
