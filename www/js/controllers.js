@@ -61,6 +61,22 @@ angular.module('starter.controllers', [])
     // Error callback
     console.warn('An error occured:',error);
   });
+
+  // Retrieve data from a custom query on a WordPress site
+  // resources.posts.query({
+  //   'type[]': 'legislation',
+  //   'filter[status]': 'publish',
+  //   'filter[order]': 'DESC',
+  // },
+  // function(posts) {
+  //   // Success callback
+  //   console.log('Success: ',posts);
+  //   $scope.posts = posts;
+  // },
+  // function(error) {
+  //   // Error callback
+  //   console.warn('An error occured:',error);
+  // });
 })
 
 .controller('EventCtrl', function($scope, $stateParams) {

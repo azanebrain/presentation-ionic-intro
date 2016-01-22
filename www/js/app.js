@@ -12,6 +12,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
   return {
     'data': $resource('data/data.json'),
   };
+  // Example of creating multiple endpoints to retrive different types of data from a WordPress site
+  // Example usage: resources.posts.query(...)
+  // var url = 'http://representmenow.co/wp-json';
+  // return {
+  //   'posts': $resource(url + '/posts'),
+  //   'users': $resource(url + '/users'),
+  // };
 })
 
 .run(function($ionicPlatform) {
