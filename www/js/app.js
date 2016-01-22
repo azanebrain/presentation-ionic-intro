@@ -4,7 +4,15 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
+
+// This service will collect JSON data
+// It returns a JSON object which the app can interact with (by have the business logic deal with it directly, or setting it to a variable on the scope)
+.factory('resources', function($resource) {
+  return {
+    'data': $resource('data/data.json'),
+  };
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
